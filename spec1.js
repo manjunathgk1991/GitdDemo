@@ -13,30 +13,36 @@ describe("Change password", function(){
 	using(data.logindata,function(data,description){
 
 		it("Change the password" + description, function()
-	{
+		{
 
-        obj.email.sendKeys(data.email);
-        obj.password.sendKeys(data.password);
-        obj.logIn.click();
+			obj.email.sendKeys(data.email);
+			obj.password.sendKeys(data.password);
+			obj.logIn.click();
 
-		browser.actions().mouseMove(obj.profileMenuContainer).click().perform();
-		obj.changePassword.click();
-		obj.currentPassword.sendKeys(data.password);
-		obj.newPassword.sendKeys(data.newPassword);
-		obj.confirmPassword.sendKeys(data.newPassword);
-		obj.submitButton.click();
-
-		obj.email.sendKeys(data.email);
-        obj.password.sendKeys(data.newPassword);
-        obj.logIn.click();
-
+			browser.actions().mouseMove(obj.profileMenuContainer).click().perform();
+			obj.changePassword.click();
+			obj.currentPassword.sendKeys(data.password);
+			obj.newPassword.sendKeys(data.newPassword);
+			obj.confirmPassword.sendKeys(data.newPassword);
+			obj.submitButton.click();
 
 			
-		/*element(by.css("button[class='mat-menu-item ng-star-inserted']")).click().then(function(){
-			browser.sleep(10000);
-		});*/			
+
+
+				
+			/*element(by.css("button[class='mat-menu-item ng-star-inserted']")).click().then(function(){
+				browser.sleep(10000);
+			});*/			
 					
-	})	
+		})	
+
+	})
+
+	it("Login with new Password", function()
+	{
+		obj.email.sendKeys(data.email);
+		obj.password.sendKeys(data.newPassword);
+		obj.logIn.click();
 
 	})
 	
