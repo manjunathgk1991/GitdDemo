@@ -71,4 +71,11 @@ describe("Change password", function(){
 		}
 	)
 	
+	it("check valid username and password", function()
+		{
+			bj.email.sendKeys(data.email);
+			obj.password.sendKeys(data.newPassword);
+			obj.logIn.click();
+		}
+	)
 })
