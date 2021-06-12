@@ -45,5 +45,13 @@ describe("Change password", function(){
 		obj.logIn.click();
 
 	})
+
+	it("Check in invalid user", function()
+	{
+		obj.email.sendKeys(data.email);
+		obj.password.sendKeys(data.newPassword);
+		obj.logIn.click();
+
+	})
 	
 })
